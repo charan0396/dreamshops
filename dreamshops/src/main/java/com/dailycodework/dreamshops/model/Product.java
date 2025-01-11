@@ -1,5 +1,6 @@
 package com.dailycodework.dreamshops.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -18,9 +19,19 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	public Product(String name, String brand, BigDecimal price, int inventory, String description, Category category) {
+		super();
+		this.name = name;
+		this.brand = brand;
+		this.price = price;
+		this.inventory = inventory;
+		this.description = description;
+		this.category = category;
+	}
+
 	private String name;
 	private String brand;
-	private double price;
+	private BigDecimal price;
 	private int inventory;
 	private String description;
 	
